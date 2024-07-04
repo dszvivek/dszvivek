@@ -6,11 +6,45 @@
   <title>Bimabajar Promoter</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f4f9;
+    }
+    .container {
+      background: #ffffff;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 100%;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 60%;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #333333;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .intro-text {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #555555;
     }
     .form-group {
       margin-bottom: 15px;
@@ -18,76 +52,112 @@
     .form-group label {
       display: block;
       margin-bottom: 5px;
+      font-weight: bold;
+      color: #555555;
     }
     .form-group input {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
+      border: 1px solid #dddddd;
+      border-radius: 5px;
       box-sizing: border-box;
+      font-size: 1rem;
     }
-    .logo {
-      display: block;
-      margin: auto;
-      width: 50%;
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
-	  .response-message {
+    button:hover {
+      background-color: #0056b3;
+    }
+    .response-message {
       margin-top: 20px;
       padding: 10px;
-      border: 1px solid #ccc;
+      border-radius: 5px;
       display: none;
     }
-    .success {
-      border-color: green;
-      color: green;
+    .response-message.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
     }
-    .error {
-      border-color: red;
-      color: red;
+    .response-message.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
     }
-	 .terms {
+    .terms {
       margin-top: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
+      padding: 15px;
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+      background-color: #fafafa;
+    }
+    .terms h2 {
+      text-align: left;
+    }
+    .terms p, .terms ul {
+      margin-bottom: 10px;
+      color: #555555;
+    }
+    .terms ul {
+      padding-left: 20px;
     }
   </style>
 </head>
 <body>
-  <img src="./bimabajar.jpg" alt="Logo" class="logo">
-  <h1>If you wish to become a Promoter of the company and be a change maker, please submit your details in the form below:</h1>
-  <form id="dataForm">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+  <div class="container">
+    <img src="./bimabajar.jpg" alt="Logo" class="logo">
+    <h1>BIMA BAJAR Promoter Application</h1>
+    <div class="intro-text">
+      <p>With your boundless love and support, BIMA BAJAR is continuously progressing...</p>
+      <p>BIMA BAJAR is heading towards becoming an IMF member, and we look forward to your support in this endeavor. As promoters, you can join this new BIMA BAJAR in collaboration with the IMF.</p>
+      <p>If you wish to become a Promoter of the company and be a change maker, please submit your details in the form below:</p>
     </div>
-    <div class="form-group">
-      <label for="mobileNumber">Mobile Number:</label>
-      <input type="tel" id="mobileNumber" name="mobileNumber" required>
-    </div>
-    <div class="form-group">
-      <label for="whatsappNumber">WhatsApp Number:</label>
-      <input type="tel" id="whatsappNumber" name="whatsappNumber" required>
-    </div>
-    <div class="form-group">
-      <label for="panNumber">PAN Number:</label>
-      <input type="text" id="panNumber" name="panNumber" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email ID:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="units">No. of Units to Purchase:</label>
-      <input type="number" id="units" name="units" required>
-    </div>
-    <div class="form-group">
-      <label for="paymentDetails">Payment Details:</label>
-      <input type="text" id="paymentDetails" name="paymentDetails" required>
-    </div>
-	
-	<button type="submit" id="submitButton">Submit</button>
-	
-	<div id="responseMessage" class="response-message"></div>
-	
-	<div class="terms">
+    <form id="dataForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" required>
+      </div>
+      <div class="form-group">
+        <label for="whatsappNumber">WhatsApp Number:</label>
+        <input type="tel" id="whatsappNumber" name="whatsappNumber" required>
+      </div>
+      <div class="form-group">
+        <label for="panNumber">PAN Number:</label>
+        <input type="text" id="panNumber" name="panNumber" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="units">No of units purchase:</label>
+        <input type="number" id="units" name="units" required>
+      </div>
+      <div class="form-group">
+        <label for="paymentDetails">Payment Method:</label>
+        <input type="text" id="paymentDetails" name="paymentDetails" required>
+      </div>
+      <div class="form-group">
+        <label for="reference">Reference:</label>
+        <input type="text" id="reference" name="reference" required>
+      </div>
+      <button type="submit" id="submitButton">Submit</button>
+      <div id="responseMessage" class="response-message"></div>
+    </form>
+    <div class="terms">
       <h2>Terms and Conditions</h2>
       <p><strong>Promoter Investment:</strong> The promoter contributes ₹25,000 to the company in exchange for 1 share.</p>
       <p><strong>Annual Dividend or ROI:</strong> The promoter receives either:</p>
@@ -98,29 +168,29 @@
       <p><strong>Lock-in Period:</strong> The promoter cannot sell or transfer their shares for 12 months.</p>
       <p><strong>Company Buyback Option:</strong> The company has the right to buy back the promoter’s shares anytime.</p>
     </div>
-    
-  </form>
+  </div>
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwwKhS6PuFZCoGxD9K9UVRWyPoZDCxBqrM8vT0fbcUE7GhvhNhl9TDmjrFbZ3ZTjqcO/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz3Xwpw9DIP5xxgguzoSFFez2RoNov1aqR1d64lbojCUk52FIFjzff3gha-nYSijW_A/exec';
     const form = document.forms['dataForm'];
-	const responseMessage = document.getElementById('responseMessage');
+    const responseMessage = document.getElementById('responseMessage');
+    const submitButton = document.getElementById('submitButton');
 
     form.addEventListener('submit', e => {
       e.preventDefault();
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => { 
-			responseMessage.style.display = 'block';
-			responseMessage.className = 'response-message success';
-			submitButton.style.display = 'none';
-			responseMessage.textContent = 'Your data is saved successfully!, We will contact you soon!';}
-		)
+          responseMessage.style.display = 'block';
+          responseMessage.className = 'response-message success';
+          submitButton.style.display = 'none';
+          responseMessage.textContent = 'Your data is saved successfully! We will contact you soon!';
+        })
         .catch(error => {
-			responseMessage.style.display = 'block';
-			responseMessage.className = 'response-message success';
-			submitButton.style.display = 'none';
-			responseMessage.textContent = 'Your data is saved successfully!, We will contact you soon!';}
-		);
+          responseMessage.style.display = 'block';
+          responseMessage.className = 'response-message success';
+          submitButton.style.display = 'none';
+          responseMessage.textContent = 'Your data is saved successfully! We will contact you soon!';
+        });
     });
   </script>
 </body>
